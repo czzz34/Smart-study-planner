@@ -1,0 +1,106 @@
+<html>  
+<head>  
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0
+">
+    <title>Smart Study Planner</title>
+    </head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Smart Study Planner</h1>
+            <p class="subtitle">Organize your study schedule and track academic tasks</p>
+        </header>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="card">
+                    <h2 class="card-title">Add New Task</h2>
+                    <form id="task-form">
+                        <div class="form-group">
+                            <label for="task-title">Task Title</label>
+                            <input type="text" id="task-title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="task-subject">Subject</label>
+                            <input type="text" id="task-subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="task-description">Description</label>
+                            <textarea id="task-description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="task-deadline">Deadline</label>
+                            <input type="date" id="task-deadline" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="task-priority">Priority</label>
+                            <select id="task-priority">
+                                <option value="low">Low</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="task-reminder">Set Reminder</label>
+                            <input type="datetime-local" id="task-reminder">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Task</button>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">Study Statistics</h2>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-value" id="total-tasks">0</div>
+                            <div class="stat-label">Total Tasks</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="completed-tasks">0</div>
+                            <div class="stat-label">Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="pending-tasks">0</div>
+                            <div class="stat-label">Pending</div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" id="progress-bar" style="width: 0%"></div>
+                    </div>
+                    <p id="progress-text">0% Complete</p>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="card">
+                    <h2 class="card-title">Your Study Tasks</h2>
+                    <div class="filter-options">
+                        <button class="filter-btn active" data-filter="all">All Tasks</button>
+                        <button class="filter-btn" data-filter="pending">Pending</button>
+                        <button class="filter-btn" data-filter="completed">Completed</button>
+                    </div>
+                    <ul class="task-list" id="task-list">
+                        <!-- Tasks will be dynamically added here -->
+                    </ul>
+                    <div id="empty-tasks" class="empty-state">
+                        <i>📚</i>
+                        <p>No tasks added yet. Start by adding your first study task!</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">Upcoming Timeline</h2>
+                    <div class="timeline" id="timeline">
+                        <!-- Timeline items will be dynamically added here -->
+                    </div>
+                    <div id="empty-timeline" class="empty-state">
+                        <i>📅</i>
+                        <p>No upcoming deadlines. Add tasks with deadlines to see them here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>
